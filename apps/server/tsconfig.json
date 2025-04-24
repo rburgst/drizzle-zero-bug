@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.node.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "drizzle.config.ts",
+    "drizzle-zero.config.ts",
+    "drizzle/drizzle-schema.ts"
+  ]
+}

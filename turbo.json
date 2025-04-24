@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env"],
+  "tasks": {
+    "compile": {
+      "dependsOn": ["^compile"],
+      "outputs": [],
+      "inputs": ["**/*.ts", "**/*.tsx", "tsconfig.json"]
+    },
+    "build": {
+      "dependsOn": ["^build", "compile"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "dependsOn": ["^compile"],
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": [],
+      "outputs": [],
+      "cache": true,
+      "inputs": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "biome.json"]
+    },
+    "format": {
+      "dependsOn": [],
+      "outputs": [],
+      "cache": false,
+      "inputs": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "biome.json"]
+    },
+    "format:check": {
+      "dependsOn": [],
+      "outputs": [],
+      "cache": true,
+      "inputs": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "biome.json"]
+    }
+  }
+}

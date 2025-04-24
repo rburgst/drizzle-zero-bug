@@ -1,0 +1,6 @@
+packages:
+  - apps/*
+onlyBuiltDependencies:
+  - "@rocicorp/zero-sqlite3"
+  - esbuild
+  - protobufjs
